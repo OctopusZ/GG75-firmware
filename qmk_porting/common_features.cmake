@@ -39,12 +39,16 @@ endif()
 # VIA_ENABLE
 if(VIA_ENABLE)
     add_definitions(-DVIA_ENABLE -DRAW_ENABLE -DDYNAMIC_KEYMAP_ENABLE)
+    add_definitions(-DVIAL_ENABLE)
     set(EEPROM_ENABLE ON CACHE BOOL "QMK" FORCE)
     set(BOOTMAGIC_ENABLE ON CACHE BOOL "QMK" FORCE)
+    
     message(STATUS "VIA_ENABLE")
     list(APPEND quantum_SOURCES
         "${QMK_BASE_DIR}/quantum/dynamic_keymap.c"
         "${QMK_BASE_DIR}/quantum/via.c"
+        "${QMK_BASE_DIR}/quantum/vial.c"
+        "${QMK_BASE_DIR}/quantum/vial.h"
     )
 endif()
 

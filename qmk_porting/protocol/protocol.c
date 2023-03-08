@@ -211,9 +211,3 @@ __HIGH_CODE void protocol_task()
     }
 }
 
-void keyboard_post_init_user()
-{
-#ifdef PLF_DEBUG
-    print("Set log output for QMK.\n");
-#endif
-}

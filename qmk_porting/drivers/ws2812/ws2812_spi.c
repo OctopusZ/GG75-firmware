@@ -32,6 +32,7 @@ static void ws2812_init()
     R8_SPI0_CTRL_CFG &= ~RB_SPI_DMA_ENABLE;
     PFIC_EnableIRQ(SPI0_IRQn);
     ws2812_inited = true;
+    memset(txbuf,0, sizeof(txbuf));
 }
 
 __INTERRUPT __HIGH_CODE void SPI0_IRQHandler()
@@ -146,12 +147,12 @@ void ws2812_power_toggle(bool status)
         return;
     }
 
-    if (status) {
-        writePin(WS2812_EN_PIN, WS2812_EN_LEVEL);
-        setPinOutput(WS2812_EN_PIN);
-    } else {
-        writePin(WS2812_EN_PIN, WS2812_EN_LEVEL ? 0 : 1);
-        setPinOutput(WS2812_EN_PIN);
-    }
+    //if (status) {
+    //    writePin(WS2812_EN_PIN, WS2812_EN_LEVEL);
+    //    setPinOutput(WS2812_EN_PIN);
+    //} else {
+    //    writePin(WS2812_EN_PIN, WS2812_EN_LEVEL ? 0 : 1);
+    //    setPinOutput(WS2812_EN_PIN);
+    //}
     ws2812_powered_on = status;
 }

@@ -125,7 +125,7 @@ __attribute__((section(".highcode_copy"))) void mySystemInit()
     sys_safe_access_enable();
     R8_FLASH_CFG = 0X52;
     sys_safe_access_disable();
-    //¸ü¸ÄFLASH clkµÄÇý¶¯ÄÜÁ¦
+    //ï¿½ï¿½ï¿½ï¿½FLASH clkï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     sys_safe_access_enable();
     R8_PLL_CONFIG |= 1 << 7;
     sys_safe_access_disable();
@@ -287,11 +287,11 @@ __HIGH_CODE void gpio_strap()
     pin_a &= ~bX32KO;
 #endif
 #ifdef WS2812
-    if (WS2812_EN_PIN & 0x80000000) {
-        pin_b &= ~((WS2812_EN_PIN & 0x7FFFFFFF));
-    } else {
-        pin_a &= ~((WS2812_EN_PIN & 0x7FFFFFFF));
-    }
+    //if (WS2812_EN_PIN & 0x80000000) {
+    //    pin_b &= ~((WS2812_EN_PIN & 0x7FFFFFFF));
+    //} else {
+    //    pin_a &= ~((WS2812_EN_PIN & 0x7FFFFFFF));
+    //}
 #elif defined AW20216
     if (DRIVER_1_EN & 0x80000000) {
         pin_b &= ~((DRIVER_1_EN & 0x7FFFFFFF));
