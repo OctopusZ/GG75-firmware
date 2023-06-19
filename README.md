@@ -1,10 +1,15 @@
+# GG75 ONLY
+
+Due to hardware changes, this Git branch only supports GG75 keyboards
+
+
 # QMK
 
-with wireless support in a single chip.
+with support in a single chip.
 
 ## Overview
 
-This is a porting of QMK keyboard firmware for CH58x series, currently support CH582.
+This is a porting of QMK keyboard firmware （VIAL） for CH58x series, currently support CH582.
 
 ## Directory Structure
 
@@ -23,9 +28,8 @@ This is a porting of QMK keyboard firmware for CH58x series, currently support C
 
 ## Highlights
 
-- BLE/USB/2.4G triple mode (in progress)
+- USB mode
 - Capability to update along with the QMK repo
-- Low power comsumption in wireless modes.
 
 ## Hardware supporting
 
@@ -33,7 +37,7 @@ Currently only CH582M is tested.
 
 ## Building
 
-First of all, clone this repo recursively using `git clone --recursive https://github.com/Huckies/qmk_port_ch582.git`
+First of all, clone this repo recursively using `git clone --recursive https://github.com/OctopusZ/qmk_port_ch582_4GG75.git`
 
 - A WCH-specified toolchain is provided in this repo, if you want to use the public version, you may find it [here](https://xpack.github.io/blog/2019/07/31/riscv-none-embed-gcc-v8-2-0-3-1-released). Note that you need to add it to your `PATH` environment variable manually.
 - *A global defination `INT_SOFT` is needed or the ISR handlers might not working properly.*
@@ -101,7 +105,6 @@ End users：Use [Bootmagic Lite](https://docs.qmk.fm/#/feature_bootmagic?id=boot
 
 ## 功能亮点
 
-- 三模支持 （无线功能还在写）
 - 可随QMK上游仓库随时更新，支持QMK的绝大多数功能
 - 无线低功耗
 
@@ -111,9 +114,7 @@ End users：Use [Bootmagic Lite](https://docs.qmk.fm/#/feature_bootmagic?id=boot
 
 ## 编译
 
-克隆我的仓库，使用`git clone --recursive https://github.com/Huckies/qmk_port_ch582.git`
-
-**无线部分子仓库未完成，可以通过从.gitmodules移除相关仓库来克隆并编译有线部分**
+克隆我的仓库，使用`git clone --recursive https://github.com/OctopusZ/qmk_port_ch582_4GG75.git`
 
 - WCH的工具链已经随附，当然你也可以选择使用[公版编译器](https://xpack.github.io/blog/2019/07/31/riscv-none-embed-gcc-v8-2-0-3-1-released). 但需要你自行加进环境变量。
 - *如果你确定要头铁，加一个全局宏定义`INT_SOFT`，否则中断很有可能不会正常工作*
@@ -162,6 +163,3 @@ TODO
 
 最终用户：不要使用除[Bootmagic Lite](https://docs.qmk.fm/#/feature_bootmagic?id=bootmagic-lite)以外的方式。
 
-### 还不会？
-
-这有个交流群：860356332，欢迎加入。
