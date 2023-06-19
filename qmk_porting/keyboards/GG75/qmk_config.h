@@ -20,9 +20,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //* platform settings
 #define DEBUG        Debug_UART1
 #define DCDC_ENABLE  0
-#define FREQ_SYS     60000000
+#define FREQ_SYS     40000000
 #define LSE_ENABLE   0
 #define BLE_SLOT_NUM 0
+#define HSE_LOAD_CAPACITANCE 20 // in pF unit
 // #define HSE_LOAD_CAPACITANCE 7.5 // in pF unit
 // #define LSE_LOAD_CAPACITANCE 7   // in pF unit
 //#define I2C_IO_REMAPPING
@@ -73,7 +74,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #ifdef RGB_MATRIX_ENABLE
 #define RGB_DI_PIN A14
-
+#define RGB_MATRIX_KEYPRESSES
 #define RGBLED_NUM                    96
 #define RGB_MATRIX_LED_COUNT          96
 #define DRIVER_LED_TOTAL              RGBLED_NUM
@@ -116,7 +117,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define ENABLE_RGB_MATRIX_PIXEL_RAIN
 #define ENABLE_RGB_MATRIX_PIXEL_FLOW
 #define ENABLE_RGB_MATRIX_PIXEL_FRACTAL
+
 #endif
+
+#define AUXILIARY_RGB_USE_UNIVERSAL_BRIGHTNESS
+
+
 
 #define DYNAMIC_KEYMAP_LAYER_COUNT 6
 /* define if matrix has ghost */
